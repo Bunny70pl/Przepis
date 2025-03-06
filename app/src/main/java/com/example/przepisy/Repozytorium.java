@@ -9,7 +9,7 @@ public class Repozytorium {
         przepisy.add(new Przepis(
                 "Mufinki",
                 "Mleko, maka, cukier, kakao, wszystko wymieszac",
-                "Ciastko",
+                "Ciastka",
                 R.drawable.mafinki,
                 0
                 )
@@ -31,12 +31,33 @@ public class Repozytorium {
                 )
         );
         przepisy.add(new Przepis(
-                        "Kako",
+                        "Kakao",
                         "kakao, mleko",
                         "Napoje",
                         R.drawable.kakao,
                         0
                 )
         );
+
+    }
+    public static ArrayList<Przepis> wypiszPrzepisy(String kategoira) {
+        wygenrujPrzepisu();
+        ArrayList<Przepis> przepisyWyswietlenie = new ArrayList<>();
+        for (int i = 0; i < przepisy.size(); i++) {
+            if (przepisy.get(i).getKategoria().equals(kategoira)) {
+                przepisyWyswietlenie.add(przepisy.get(i));
+            }
+        }
+        return przepisyWyswietlenie;
+    }
+    public static ArrayList<Przepis> wypiszPrzepisyNazwa(String nazwa) {
+        wygenrujPrzepisu();
+        ArrayList<Przepis> przepisyWyswietlenie = new ArrayList<>();
+        for (int i = 0; i < przepisy.size(); i++) {
+            if (przepisy.get(i).getNazwaPrzepisu().equals(nazwa)) {
+                przepisyWyswietlenie.add(przepisy.get(i));
+            }
+        }
+        return przepisyWyswietlenie;
     }
 }
